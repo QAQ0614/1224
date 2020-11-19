@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<a href="/poll/">返回主題列表</a>
 <h1>{{ poll.subject }}</h1>
-<p>{{poll.description </p>
-<p>建立日期:{{ poll.deta_created }}</p>
+<p>{{poll.description}} </p>
+<p>建立日期:{{ poll.date_created }}</p>
 
 <ul>
     {% for option in option_list %}
     <li>
-        <a href="/option/{{ option.id }}/"></a>
+        <a href="/option/{{ option.id }}/">{{ option.title }}</a>
         -{{ option.count }}票</li>
     {% endfor %}
 </ul>
